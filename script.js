@@ -109,7 +109,9 @@ document.querySelectorAll('.g-tab').forEach(function(tab){
     document.querySelectorAll('.g-tab').forEach(function(t){t.classList.remove('active');});
     document.querySelectorAll('.g-group').forEach(function(g){g.classList.remove('active');});
     this.classList.add('active');
-    document.getElementById('tab-'+this.dataset.tab).classList.add('active');
+    var activeGroup=document.getElementById('tab-'+this.dataset.tab);
+    activeGroup.classList.add('active');
+    activeGroup.querySelectorAll('.reveal').forEach(function(el){revealObs.observe(el);});
   });
 });
 
@@ -164,4 +166,15 @@ window.addEventListener('DOMContentLoaded', function() {
 var revealObs=new IntersectionObserver(function(entries){
   entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('v');});
 },{threshold:0.08});
+
+document.querySelectorAll('#tab-films .film-card').forEach(function(card,i){
+  card.classList.add('reveal');
+  card.style.transitionDelay=(120 + i*70)+'ms';
+});
+
+document.querySelectorAll('.team-section .tmcard').forEach(function(card,i){
+  card.classList.add('reveal');
+  card.style.transitionDelay=((i%3)*90)+'ms';
+});
+
 document.querySelectorAll('.reveal').forEach(function(el){revealObs.observe(el);});
