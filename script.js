@@ -170,7 +170,12 @@ window.addEventListener('DOMContentLoaded', function() {
 
 // ── Scroll reveal ──
 var revealObs=new IntersectionObserver(function(entries){
-  entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('v');});
+  entries.forEach(function(e){
+    if(e.isIntersecting){
+      e.target.classList.add('v');
+      revealObs.unobserve(e.target);
+    }
+  });
 },{threshold:0.08});
 
 document.querySelectorAll('#tab-films .film-card').forEach(function(card,i){
