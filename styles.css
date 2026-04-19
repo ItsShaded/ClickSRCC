@@ -415,10 +415,13 @@ section{position:relative;z-index:2}
   .modal-content li { text-align: center; }
   .modal-content::-webkit-scrollbar { display: none; }
   .members-columns { flex-direction: column; gap: 18px; }
+  .members-columns > div { text-align: center; }
+  .members-columns h3 { text-align: center; }
   .teacher-modal-grid{grid-template-columns:1fr;gap:20px}
   .teacher-modal-photo{width:160px;height:160px;border-radius:20px}
   .teacher-modal-heading{text-align:center}
   .teacher-modal-degree,.teacher-modal-desc,.teacher-modal-label{text-align:center}
+  .wing-note-tag{display:flex;justify-content:center}
   .wing-note-heading,.wing-note-copy{text-align:center}
 }
 
