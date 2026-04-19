@@ -165,8 +165,10 @@ window.addEventListener('DOMContentLoaded', function() {
   }
 
   bindModal('viewAllMembersBtn', 'allMembersModal', 'closeAllMembersModal');
+  bindModal('wingNoteOpen', 'wingNoteModal', 'wingNoteClose');
   bindModal('viewTeacherInChargeBtn', 'teacherInChargeModal', 'closeTeacherInChargeModal');
 });
+
 
 // ── Scroll reveal ──
 var revealObs=new IntersectionObserver(function(entries){
